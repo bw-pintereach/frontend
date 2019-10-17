@@ -1,45 +1,15 @@
-// import React from 'react';
-// import { NavLink } from 'react-router-dom';
-// import {
-//   Collapse,
-//   Navbar,
-//   NavbarToggler,
-//   NavbarBrand,
-//   Nav,
-//   NavItem
-// } from 'reactstrap';
-
-// const Navigation = () => {
-//   return (
-//     <Navbar>
-//       <NavLink>Add Article</NavLink>
-//       <NavLink>Add Article</NavLink>
-//       <NavLink>Add Article</NavLink>
-//       <NavLink>Add Article</NavLink>
-//     </Navbar>
-//   );
-// };
-
-// export default Navigation;
-
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { Navbar } from 'reactstrap';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { Navbar } from "reactstrap";
 
 export default function Navigation() {
   return (
     <Navbar color="dark">
-      <NavLink exact activeClassName="active" to="/">
-        Add Article
+      <NavLink className="col-6" exact activeClassName="active" to="/dashboard">
+        Dashboard
       </NavLink>
-      <NavLink activeClassName="active" to="/characters">
+      <NavLink className="col-6" activeClassName="active" to="/add-article">
         Add Article
-      </NavLink>
-      <NavLink activeClassName="active" to="/locations">
-        Add Article
-      </NavLink>
-      <NavLink activeClassName="active" to="/search">
-        Add Article          
       </NavLink>
     </Navbar>
   );
