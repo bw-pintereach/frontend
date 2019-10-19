@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CategorySidebar(props) {
   const { category, handleCategoryClick } = props;
-  console.log("handleCategoryClick", handleCategoryClick);
+  // console.log("handleCategoryClick", handleCategoryClick);
 
   return (
     <>
@@ -14,8 +14,8 @@ export default function CategorySidebar(props) {
           id="all"
           name="category"
           value="all"
-          defaultChecked={category === "all" ? true : false}
-          onChange={handleCategoryClick("all")}
+          defaultChecked={category === 'all' ? true : false}
+          onChange={() => handleCategoryClick('all')}
         />
         <label htmlFor="all">All</label>
       </div>
@@ -26,8 +26,8 @@ export default function CategorySidebar(props) {
           id="mobileGame"
           name="category"
           value="mobileGame"
-          defaultChecked={category === "mobileGame" ? true : false}
-          onChange={handleCategoryClick("mobileGame")}
+          defaultChecked={category === 'mobileGame' ? true : false}
+          onChange={() => handleCategoryClick('Mobile Game')}
         />
         <label htmlFor="mobileGame">Mobile Game</label>
       </div>
@@ -38,8 +38,8 @@ export default function CategorySidebar(props) {
           id="computerGame"
           name="category"
           value="computerGame"
-          defaultChecked={category === "computerGame" ? true : false}
-          onChange={handleCategoryClick("computerGame")}
+          defaultChecked={category === 'computerGame' ? true : false}
+          onChange={() => handleCategoryClick('Computer Game')}
         />
         <label htmlFor="computerGame">Computer Game</label>
       </div>
