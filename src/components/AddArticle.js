@@ -1,13 +1,29 @@
-import React from "react";
-import Navigation from "./Navigation";
+import React, { useState } from 'react';
+import { axiosWithAuth } from "../data/axiosAuth";
 
-const AddArticle = () => {
-  return (
-    <div>
-      <Navigation />
-      <h1>Add Article</h1>
-    </div>
-  );
+
+const initialArticle = {
+    title: "",
+    summary: "",
+    link: "",
+    image: img,
+    category: "", 
 };
 
-export default AddArticle;
+
+const ArticleList = ({ articles, updateArticles }) => {
+    console.log(articles);
+    const [edit, setEdit] = useState(false);
+    const [articleToEdit, setArticleToEdit] = useState(initialArticle);
+
+
+const editArticle = article => {
+    setEdit(true);
+    setArticleToEdit(color);
+};
+const saveEdit = e => {
+    e.preventDefault();
+};
+
+
+}
