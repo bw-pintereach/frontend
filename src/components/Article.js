@@ -3,7 +3,6 @@ import {
   Card,
   CardImg,
   CardText,
-  CardBody,
   CardTitle,
   CardSubtitle,
   Button,
@@ -11,7 +10,7 @@ import {
   Row
 } from 'reactstrap';
 
-const Article = ({ id, title, summary, link, image, user_id, category }) => {
+const Article = ({ title, summary, link, image, category }) => {
   return (
     <>
       <Col xl="4" md="6" className="mt-4">
