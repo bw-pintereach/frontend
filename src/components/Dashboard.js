@@ -59,10 +59,12 @@ const Dashboard = () => {
 
   useEffect(() => {
     axiosWithAuth()
-      .get("https://pintreachbackend.herokuapp.com/api/articles/")
+      .get(
+        "https://cors-anywhere.herokuapp.com/https://pintreachbackend.herokuapp.com/api/articles/"
+      )
       .then(result => {
         console.log("result", result);
-        // setArticles(result.data);
+        setArticles(result.data);
       })
       .catch(error => {
         console.log("error", error);
