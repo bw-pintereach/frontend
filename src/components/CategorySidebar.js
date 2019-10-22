@@ -14,8 +14,8 @@ export default function CategorySidebar(props) {
           id="all"
           name="category"
           value="all"
-          defaultChecked={category === 'all' ? true : false}
-          onChange={() => handleCategoryClick('all')}
+          defaultChecked={category === "all" ? true : false}
+          onChange={() => handleCategoryClick("all")}
         />
         <label htmlFor="all">All</label>
       </div>
@@ -23,25 +23,25 @@ export default function CategorySidebar(props) {
       <div>
         <input
           type="radio"
-          id="mobileGame"
+          id="Game"
           name="category"
-          value="mobileGame"
-          defaultChecked={category === 'mobileGame' ? true : false}
-          onChange={() => handleCategoryClick('Mobile Game')}
+          value="Game"
+          defaultChecked={category === "Game" ? true : false}
+          onChange={() => handleCategoryClick("Game")}
         />
-        <label htmlFor="mobileGame">Mobile Game</label>
+        <label htmlFor="Game">Game</label>
       </div>
 
       <div>
         <input
           type="radio"
-          id="computerGame"
+          id="Gasdfsdfme"
           name="category"
-          value="computerGame"
-          defaultChecked={category === 'computerGame' ? true : false}
-          onChange={() => handleCategoryClick('Computer Game')}
+          value="Gasdfsdfme"
+          defaultChecked={category === "Gasdfsdfme" ? true : false}
+          onChange={() => handleCategoryClick("Gasdfsdfme")}
         />
-        <label htmlFor="computerGame">Computer Game</label>
+        <label htmlFor="Gasdfsdfme">Gasdfsdfme</label>
       </div>
     </>
   );
