@@ -1,14 +1,14 @@
-import React from "react";
-import { Route } from "react-router-dom";
-import Dashboard from "./components/Dashboard";
-import AddArticle from "./components/AddArticle";
-import "./App.css";
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Login from './components/Login'
 
 function App() {
   return (
     <div className="App">
-      <Route path="/dashboard" component={Dashboard} />
-      <Route path="/add-article" component={AddArticle} />
+      <header className="App-header">
+        <Login/>
+      </header>
     </div>
   );
 }

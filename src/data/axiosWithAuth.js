@@ -1,14 +1,17 @@
-import axios from "axios";
+import axios from 'axios';
 
-const axiosWithAuth = () => {
-  const token = localStorage.getItem("token");
-  return axios.create({
-    headers: {
-      "Content-Type": "application/json",
-      Authorization:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo4MywidXNlcm5hbWUiOiJkZWViYXJpem8iLCJpYXQiOjE1NzE3MTE0MDQsImV4cCI6MTU3MjY2MTgwNH0.WsZEhAU-WfgVidMgg8cZLdP_Lune19Xv6kMLdk2A-Gc"
-    }
-  });
+export const axiosWithAuth =() => {
+    const token = localStorage.getItem('token');
+    const proxy = "https://cors-anywhere.herokuapp.com/";
+    const url = "https://pintreachbackend.herokuapp.com/api/auth/login";
+
+    return axios.create({
+        
+        baseURL: proxy + url ,
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `${token}`,
+        },
+    });
+    
 };
-
-export default axiosWithAuth;
