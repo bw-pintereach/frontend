@@ -8,7 +8,7 @@ const AddArticle = () => {
   return (
     <div>
       <Navigation />
-      <h1>Add Article</h1>
+      <h1>Add Article</h1> 
       <Form>
         <Field type="text" name="id" placeholder="ID" />
         <Field type="text" name="title" placeholder="Title" />

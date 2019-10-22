@@ -5,7 +5,7 @@ export default function CategorySidebar(props) {
   // console.log("handleCategoryClick", handleCategoryClick);
 
   return (
-    <>
+    <div>
       <p>Select a category:</p>
 
       <div>
@@ -43,6 +43,6 @@ export default function CategorySidebar(props) {
         />
         <label htmlFor="Gasdfsdfme">Gasdfsdfme</label>
       </div>
-    </>
+    </div>
   );
 }
