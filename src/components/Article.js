@@ -7,20 +7,26 @@ import {
   CardTitle,
   CardSubtitle,
   Button,
-  Col
+  Col,
+  Row
 } from 'reactstrap';
 
 const Article = ({ id, title, summary, link, image, user_id, category }) => {
   return (
     <>
-      <Col sm="6">
+      <Col xl="4" md="6" className="mt-4">
         <Card body>
           <CardImg src={`${image}`} alt="" />
-          <CardTitle className="display-3">
+          <CardTitle className="display-4">
             <a href={`${link}`}>{title}</a>
           </CardTitle>
           <CardText>{summary}</CardText>
-          <CardSubtitle>{category}</CardSubtitle>
+          <CardSubtitle className="text-info">{category}</CardSubtitle>
+          <Row className="mt-5">
+            <Button className="col-4 btn-sm">Edit</Button>
+            <div className="col-4 btn-sm" />
+            <Button color="danger" className="col-4 btn-sm">Delete</Button>
+          </Row>
         </Card>
       </Col>
     </>
