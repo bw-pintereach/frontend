@@ -30,7 +30,7 @@ const [loginCreds, setLoginCreds] = useState({
       })
       .then(res => {
         localStorage.setItem("token", res.data.token);
-        props.history.push("/articles");
+        props.history.push("/dashboard");
         console.log(login)
       })
       .catch(err =>
