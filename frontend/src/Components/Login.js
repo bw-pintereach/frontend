@@ -3,6 +3,7 @@ import { axiosWithAuth } from "../data/axiosWithAuth";
 
 const Login = props => {
 
+    
 const [loginCreds, setLoginCreds] = useState({
     username: "",
     password: "",
@@ -10,7 +11,9 @@ const [loginCreds, setLoginCreds] = useState({
   });
 
   const handleChange = e => {
+    
     setLoginCreds({
+        
       ...loginCreds,
       [e.target.name]: e.target.value,
       err: null
@@ -18,8 +21,10 @@ const [loginCreds, setLoginCreds] = useState({
   };
 
   const login = () => {
+    const proxy = "https://cors-anywhere.herokuapp.com/";
+    const url = "https://pintreachbackend.herokuapp.com/api/auth/login";
     axiosWithAuth()
-      .post(`https://pintreachbackend.herokuapp.com/api/auth/login`, {
+      .post(proxy +url , {
         username: loginCreds.username,
         password: loginCreds.password
       })

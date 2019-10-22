@@ -6,7 +6,7 @@ const initialArticle = {
     title: "",
     summary: "",
     link: "",
-    imagine: img,
+    image: img,
     category: "", 
 };
 
