@@ -3,11 +3,12 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import Navigation from './Navigation';
 import axiosWithAuth from '../data/axiosWithAuth';
+import { Col } from 'reactstrap';
 
 const AddArticle = () => {
 
   return (
-    <div>
+    <Col>
       <Navigation />
       <h1>Add Article</h1>
       <Form>
@@ -19,7 +20,7 @@ const AddArticle = () => {
         <Field type="text" name="summary" placeholder="Summary" />
         <button type="submit">Submit</button>
       </Form>
-    </div>
+    </Col>
   );
 };
 
