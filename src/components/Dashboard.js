@@ -10,7 +10,8 @@ import CategorySidebar from './CategorySidebar';
 
 const Dashboard = () => {
   const [articles, setArticles] = useState([]);
-
+  const [category, setCategory] = useState('all');
+  
   useEffect(() => {
     axiosWithAuth()
       .get(
@@ -24,9 +25,7 @@ const Dashboard = () => {
         console.log('error', error);
       });
   }, []);
-
-  const [category, setCategory] = useState('all');
-
+  
   function handleCategoryClick(category) {
     console.log('click');
     console.log(category);
