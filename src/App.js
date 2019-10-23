@@ -1,13 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route } from 'react-router-dom';
 import './App.css';
-import Login from './components/Login'
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
+import AddArticle from './components/AddArticle';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Login/>
+        <Route exact path="/" component={Login} />
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/add-article" component={AddArticle} />
       </header>
     </div>
   );
