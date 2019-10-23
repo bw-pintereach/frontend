@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { axiosWithAuth } from "../data/axiosWithAuth";
-
+import axiosWithAuth from '../data/axiosWithAuth';
 const Login = props => {
 
     
