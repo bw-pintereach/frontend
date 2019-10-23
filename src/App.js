@@ -1,15 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Login from './components/Login'
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Dashboard from "./components/Dashboard";
+import PrivateRoute from "./components/PrivateRoute"
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Login/>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+       
+        <Switch>
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <Route path="/login" component={Login} />
+            <Route component={Login} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

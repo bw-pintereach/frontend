@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { axiosWithAuth } from "../data/axiosWithAuth";
-
+import axiosWithAuth from '../data/axiosWithAuth';
 const Login = props => {
 
     
@@ -30,7 +29,7 @@ const [loginCreds, setLoginCreds] = useState({
       })
       .then(res => {
         localStorage.setItem("token", res.data.token);
-        props.history.push("/articles");
+        props.history.push("/dashboard");
         console.log(login)
       })
       .catch(err =>
