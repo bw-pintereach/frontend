@@ -11,23 +11,23 @@ import {
   Row
 } from 'reactstrap';
 
-const Article = ({ id, title, summary, link, image, category }) => {
+const Article = ({ id, title, summary, link, image, category, handleDelete }) => {
   
-  const handleDelete = () => {
-    axiosWithAuth()
-      .delete(
-        `https://cors-anywhere.herokuapp.com/https://pintreachbackend.herokuapp.com/api/articles/${id}`
-      )
-      .then(res => {
-        console.log(res);
-        console.log('deleted');
-      })
-      .catch(err => {
-        console.log(err);
-        console.log(id);
-        console.log('bummer');
-      });
-  };
+  // const handleDelete = () => {
+  //   axiosWithAuth()
+  //     .delete(
+  //       `https://cors-anywhere.herokuapp.com/https://pintreachbackend.herokuapp.com/api/articles/${id}`
+  //     )
+  //     .then(res => {
+  //       console.log(res);
+  //       console.log('deleted');
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //       console.log(id);
+  //       console.log('bummer');
+  //     });
+  // };
 
   return (
       <Col xl="4" md="6" className="mt-4">
@@ -41,7 +41,7 @@ const Article = ({ id, title, summary, link, image, category }) => {
           <Row className="mt-5">
             <Button className="col-4 btn-sm">Edit</Button>
             <div className="col-4 btn-sm" />
-            <Button onClick={handleDelete} color="danger" className="col-4 btn-sm">
+            <Button onClick={() => handleDelete(id)} color="danger" className="col-4 btn-sm">
               Delete
             </Button>
           </Row>
