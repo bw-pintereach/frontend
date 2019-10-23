@@ -1,20 +1,27 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+
 import './App.css';
-import Login from './components/Login';
-import Dashboard from './components/Dashboard';
+import Login from './components/Login'
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Dashboard from "./components/Dashboard";
+import PrivateRoute from "./components/PrivateRoute"
 import AddArticle from './components/AddArticle';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Route exact path="/" component={Login} />
-        <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/add-article" component={AddArticle} />
-      </header>
-    </div>
-  );
-}
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <Switch>
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <Route path="/login" component={Login} />
+            <Route component={Login} />
+            <Route exact path="/add-article" component={AddArticle} />
+         </Switch>
+        </header>
+      </div>
+    </Router>
+
 
 export default App;
