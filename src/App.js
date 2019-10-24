@@ -17,7 +17,7 @@ function App() {
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <Route path="/login" component={Login} />
             <Route component={Login} />
-            <Route exact path="/add-article" component={AddArticle} />
+            <PrivateRoute exact path="/add-article" component={AddArticle} />
          </Switch>
         </header>
       </div>
