@@ -11,6 +11,9 @@ export default function Navigation() {
       <NavLink className="col-6" activeClassName="active" to="/add-article">
         Add Article
       </NavLink>
+      <NavLink className="col-6" exact activeClassName="active" to="/request">
+        Feature Request  
+      </NavLink>
     </Navbar>
   );
 }
