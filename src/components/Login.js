@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axiosWithAuth from '../data/axiosWithAuth';
+
+
 const Login = props => {
 
     
@@ -74,8 +76,10 @@ const [loginCreds, setLoginCreds] = useState({
         {loginCreds.err && (
           <div className="error-container">{loginCreds.err}</div>
         )}
+        <button onClick={handleSubmit}>Register</button>
       </form>
     </div>
   );
 };
 export default Login;
+export { Register } from "./Register";

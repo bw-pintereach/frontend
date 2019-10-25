@@ -7,6 +7,7 @@ import { Row, Col } from 'reactstrap';
 import Article from './Article';
 import { Link } from 'react-router-dom';
 import CategorySidebar from './CategorySidebar';
+import {Login, Register} from './Register'
 
 const Dashboard = () => {
   const [articles, setArticles] = useState([]);
