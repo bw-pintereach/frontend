@@ -1,8 +1,8 @@
 import React from "react";
 
 export default function CategorySidebar(props) {
-  const { category, handleCategoryClick } = props;
-  // console.log("handleCategoryClick", handleCategoryClick);
+  const { selectedCategory, categories, handleCategoryClick } = props;
+  console.log("CategorySidebar selectedCategory", selectedCategory);
 
   return (
     <div>
@@ -12,61 +12,28 @@ export default function CategorySidebar(props) {
         <input
           type="radio"
           id="all"
-          name="category"
+          name="selectedCategory"
           value="all"
-          defaultChecked={category === "all" ? true : false}
+          defaultChecked={selectedCategory === "all" ? "checked" : ""}
           onChange={() => handleCategoryClick("all")}
-        />
+        />{" "}
         <label htmlFor="all">All</label>
       </div>
 
-      <div>
-        <input
-          type="radio"
-          id="Game"
-          name="category"
-          value="Game"
-          defaultChecked={category === "Game" ? true : false}
-          onChange={() => handleCategoryClick("Game")}
-        />
-        <label htmlFor="Game">MMO</label>
-      </div>
-      
-      <div>
-        <input
-          type="radio"
-          id="Game"
-          name="category"
-          value="Game"
-          defaultChecked={category === "Game" ? true : false}
-          onChange={() => handleCategoryClick("Game")}
-        />
-        <label htmlFor="Game">Adventure</label>
-      </div>
-
-      <div>
-        <input
-          type="radio"
-          id="Game"
-          name="category"
-          value="Game"
-          defaultChecked={category === "Game" ? true : false}
-          onChange={() => handleCategoryClick("Game")}
-        />
-        <label htmlFor="Game">Horror</label>
-      </div>
-
-      <div>
-        <input
-          type="radio"
-          id="RPG"
-          name="category"
-          value="Game"
-          defaultChecked={category === "Game" ? true : false}
-          onChange={() => handleCategoryClick("Game")}
-        />
-        <label htmlFor="RPG">RPG</label>
-      </div>
+      {categories.map(category => {
+        return (
+          <div key={category}>
+            <input
+              type="radio"
+              id={category}
+              name="selectedCategory"
+              value={category}
+              onChange={() => handleCategoryClick(category)}
+            />{" "}
+            <label htmlFor={category}>{category}</label>
+          </div>
+        );
+      })}
     </div>
   );
 }
