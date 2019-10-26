@@ -6,11 +6,10 @@ import axiosWithAuth from '../data/axiosWithAuth';
 import { Col } from 'reactstrap';
 
 const AddArticle = props => {
-  console.log(props.values.id);
   const { touched, errors } = props;
-
   const [newID, setNewID] = useState();
-  // props.values.id = newID;
+
+  props.initialValues.id = newID;
 
   useEffect(() => {
     axiosWithAuth()
@@ -26,15 +25,15 @@ const AddArticle = props => {
       .catch(error => {
         console.log('error', error);
       });
-  }, []);
+  }, [newID]);
 
   return (
     <Col>
       <Navigation />
       <h1>Add Article</h1>
       <Form>
-        <Field type="text" name="id" placeholder="ID" />
-        {touched.id && errors.id && <p className="error">{errors.id}</p>}
+        <Field className="hideID" type="text" name="id" placeholder="ID" />
+        {/* {touched.id && errors.id && <p className="error">{errors.id}</p>} */}
 
         <Field type="text" name="title" placeholder="Title" />
         {touched.title && errors.title && (
@@ -49,7 +48,9 @@ const AddArticle = props => {
 
         <Field type="text" name="summary" placeholder="Summary" />
 
-        <button type="submit">Submit</button>
+        <button type="submit" onClick={() => setNewID(props.initialValues.id + 1)}>
+          Submit
+        </button>
       </Form>
     </Col>
   );
@@ -57,6 +58,7 @@ const AddArticle = props => {
 
 const FormikAddArticle = withFormik({
   mapPropsToValues({ id, title, link, image, category, summary }) {
+    console.log(id);
     return {
       id: id || '',
       title: title || '',
@@ -74,10 +76,10 @@ const FormikAddArticle = withFormik({
         values
       )
       .then(res => {
-        alert('Article Successfully Added');
         setStatus(res.data);
         resetForm();
         setSubmitting(false);
+        alert('Article Successfully Added');
       })
       .catch(err => {
         console.log(err);
@@ -86,7 +88,7 @@ const FormikAddArticle = withFormik({
   },
 
   validationSchema: Yup.object().shape({
-    id: Yup.string().required("Please enter an ID."),
+    // id: Yup.string().required("Please enter an ID."),
     title: Yup.string().required('Please enter a title.')
   })
 })(AddArticle);
