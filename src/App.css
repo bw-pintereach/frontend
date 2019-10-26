@@ -41,3 +41,7 @@ form input {
   display: block;
   margin: 1.5rem auto 1.5rem auto;
 }
+
+.hideID {
+  display: none;
+}
