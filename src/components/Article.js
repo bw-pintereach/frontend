@@ -14,7 +14,7 @@ const Article = ({ id, title, summary, link, image, category, handleDelete }) =>
 
   return (
       <Col xl="4" md="6" className="mt-4">
-        <Card body>
+        <Card body className="animated fadeInUp">
           <CardImg src={`${image}`} alt="" />
           <CardTitle className="display-4">
             <a href={`${link}`}>{title}</a>
