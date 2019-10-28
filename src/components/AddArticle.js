@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import Navigation from './Navigation';
@@ -19,8 +19,12 @@ const AddArticle = props => {
       .then(result => {
         console.log('result', result.data);
         const arrayID = result.data.map(article => article.id);
-        console.log(arrayID[arrayID.length - 1] + 1);
-        setNewID(arrayID[arrayID.length - 1] + 1);
+        const largestID = arrayID.reduce((prev, curr) => {
+          return curr > prev ? curr : prev;
+        });
+        console.log(largestID);
+        console.log(largestID + 1);
+        setNewID(largestID + 1);
       })
       .catch(error => {
         console.log('error', error);
@@ -48,7 +52,10 @@ const AddArticle = props => {
 
         <Field type="text" name="summary" placeholder="Summary" />
 
-        <button type="submit" onClick={() => setNewID(props.initialValues.id + 1)}>
+        <button
+          type="submit"
+          onClick={() => setNewID(props.initialValues.id + 1)}
+        >
           Submit
         </button>
       </Form>
